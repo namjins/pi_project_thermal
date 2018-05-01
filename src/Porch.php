@@ -69,7 +69,7 @@ class Porch
 
         $last_movement = $this->getHour($this->last_movement);
         // Check that we're within our time window
-        if ($last_movement > $this->active_start && $last_movement < $this->active_stop) {
+        if ($last_movement >= $this->active_start) {
             if ((($new_movement - $this->last_movement) > $this->timeout || $this->activation_count <= $this->activation_threshold)) {
                 $this->activateSound();
             }
