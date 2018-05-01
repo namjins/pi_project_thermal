@@ -4,7 +4,9 @@ const GPIO_PIN = 17;
 const TIMEOUT = 60 * 5; // 5 minutes
 const ACTIVATION_THRESHOLD = 2;
 
+
 require_once 'vendor/autoload.php';
+include "src/Porch.php";
 
 use PiPHP\GPIO\GPIO;
 use PiPHP\GPIO\Pin\InputPinInterface;
