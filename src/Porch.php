@@ -55,7 +55,6 @@ class Porch
         $this->activation_threshold = $activation_threshold;
         $this->activation_count = 0;
         $this->timeout = $timeout;
-        $this->audio_scream = `omxplayer -o local audio/nmh_scream1.mp3`;
     }
 
     /**
@@ -117,6 +116,6 @@ class Porch
      */
     private function activateSound()
     {
-        echo $this->audio_scream;
+        echo `omxplayer -o local audio/nmh_scream1.mp3`;
     }
 }
