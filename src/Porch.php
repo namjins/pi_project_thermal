@@ -50,8 +50,8 @@ class Porch
     public function __construct(DateTime $active_start, Datetime $active_stop, $timeout, $activation_threshold)
     {
         $this->last_movement = time();
-        $this->active_start = date("G", strtotime($active_start));
-        $this->active_stop = date("G", strtotime($active_stop));
+        $this->active_start = date("G", $active_start->getTimestamp());
+        $this->active_stop = date("G", $active_stop->getTimestamp());
         $this->activation_threshold = $activation_threshold;
         $this->activation_count = 0;
         $this->timeout = $timeout;
@@ -85,8 +85,7 @@ class Porch
      */
     private function getHour($timestamp)
     {
-        return date("G", new DateTime($timestamp));
-
+        return date("G", $timestamp);
     }
 
     /**
